@@ -6,9 +6,7 @@ import Task from './components/task'
 import Quickies from './components/quickies'
 import { journeys_data } from './data/journeys_data'
 
-
 export default function App() {
-journeys_data.map(()=>console.log("data"))
   return (
     <View style={styles.container}>
       <Personal />
