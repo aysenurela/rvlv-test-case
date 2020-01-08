@@ -22,7 +22,7 @@ export default class Quickies extends React.Component {
 const styles = StyleSheet.create({
     quickies: {
         flex:1,
-        backgroundColor: 'red',
+        backgroundColor: '#ff9500',
         alignItems:'center',
         position:'absolute',
         bottom: -50,
@@ -32,24 +32,24 @@ const styles = StyleSheet.create({
         borderRadius:50
     },
     quickiesButton: {
+        zIndex:1,
         width: 30,
         height: 30,
-        backgroundColor: 'pink',
+        borderWidth: 4, 
         borderRadius:15,
-        borderColor: 'white',
-        borderWidth: 2,
+        color: '#ff9500',
+        backgroundColor: 'white',
+        borderColor: '#ff9500',
         position:'absolute',                          
-        //left: 0,
-        //top: 0,
         top: -15,
+        justifyContent:'center',
         alignItems:'center',
-        //justifyContent:'center',
-        alignSelf: 'center'
     },
     quickiesText: {
         margin: 25,
         fontWeight:'bold',
-        fontSize: 15
+        fontSize: 15,
+        color: 'white'
     }
   });
   

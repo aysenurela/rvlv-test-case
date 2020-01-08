@@ -24,7 +24,13 @@ export default class ProgressBar extends React.Component {
             borderRadius,
             barColor,
             fillColor,
-            duration
+            duration,
+            skill: {
+                skillId,
+                title,
+                color: androidColor,
+                percent
+            }
         } = this.props
 
         const widthInterpolated = this.animation.interpolate({
@@ -33,24 +39,28 @@ export default class ProgressBar extends React.Component {
             extrapolate: 'clamp'
         })
 
+        let hexCol = androidColor.slice(4,androidColor.length).toLowerCase()
+
         return(
             <View style={{flexDirection: 'row', height, margin: 5, borderRadius }}>
-                <View 
-                style={{
-                    zIndex:10, 
-                    position:'absolute',
-                    backgroundColor:'orange', 
-                    width:31,  
-                    height:31,                            
-                    left: 2,
-                    top: 2,
-                    bottom: 0,
-                    borderRadius,
-                    alignItems:'center',
-                    justifyContent:'center'}}>
-                    <Text>10</Text>
-                </View> 
-                            
+                <View style={{justifyContent:'center'}}>
+                    <View 
+                    style={{
+                        zIndex:1, 
+                        position:'absolute',
+                        backgroundColor:'white', 
+                        width:28,  
+                        height:28,                            
+                        left: 3,
+                        top: 3,
+                        bottom: 0,
+                        borderRadius,
+                        alignItems:'center',
+                        justifyContent:'center'}}>
+                        <Text style={{fontWeight:'bold', color:`#${hexCol}`}}>{percent}</Text>
+                    </View> 
+                    <Text style={{position: 'absolute', zIndex:1, left:35, color: 'white' }}> {title} </Text>
+                </View>
                 <View style={{flex:1, borderColor, borderWidth, borderRadius}}>  
                     <View 
                         style={[StyleSheet.absoluteFill, {
@@ -64,7 +74,7 @@ export default class ProgressBar extends React.Component {
                             left: 0,
                             top: 0,
                             bottom: 0,
-                            backgroundColor: barColor,
+                            backgroundColor: `#${hexCol}`,
                             width: widthInterpolated,
                             borderRadius
                         }}
@@ -77,10 +87,10 @@ export default class ProgressBar extends React.Component {
 
 ProgressBar.defaultProps = {
     height: 35,
-    borderColor: 'blue',
+    borderColor: '#e9ecef',
     borderWidth:1,
     borderRadius: 20,
-    barColor: "tomato",
-    fillColor: "yellow",
+    //barColor: "",
+    fillColor: "#e9ecef",
     duration: 100
 }

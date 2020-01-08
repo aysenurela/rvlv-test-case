@@ -1,4 +1,4 @@
-export const data = [
+export const journeys_data = [
   {
     "journeyId": 1,
     "title": "Become An Art Director",

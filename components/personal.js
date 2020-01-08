@@ -24,9 +24,13 @@ export default class Personal extends React.Component {
   
 const styles = StyleSheet.create({
     personContainer: {
-        display:"flex",
+        //display:"flex",
         flexDirection: "row",
-        padding:15
+        marginRight: 25,
+        marginLeft: 25,
+        marginTop:25,
+        marginBottom:0,
+        padding:5
     },
     myButton: {
         width: 25,
@@ -35,9 +39,14 @@ const styles = StyleSheet.create({
     myStatus: {
         fontSize: 30,
         fontWeight: 'bold',
+        color:'white'
     },
     avatar: {
-        width:50, 
-        height:50,
+        width:60, 
+        height:60,
+        borderColor:"white",
+        borderWidth: 2,
+        backgroundColor: 'white',
+        borderRadius:30,
     }
 });
