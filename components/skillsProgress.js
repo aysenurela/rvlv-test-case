@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import ProgressBar from './progressBar'
-export default class Task extends React.Component {
+import ProgressBar from './utils/progressBar'
+
+export default class SkillsProgress extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -20,25 +21,10 @@ export default class Task extends React.Component {
         const { journey } = this.props
         const {
           skills = [],
-          task: {
-              title:taskTitle = '', 
-              tags = []
-            } = {}
         } = { ...journey }
 
         return (
         <View>
-            <View style={styles.taskContainer}>
-                <View style={styles.taskTitle}>
-                    <Text style={{ color: '#5755d5'}}> Today's Task: </Text>
-                    <Text style={{ fontSize:30, fontWeight:'bold', color: '#5755d5'}}> {taskTitle} </Text>
-                </View>
-                <View style={styles.tagsContainer}>
-                    {tags.map((tag, index)=>{
-                        return <Text key={index} style={styles.tags}> {tag} </Text>
-                    })}
-                </View>
-            </View>
             <View style={styles.progressContainer}>
                 <View style={{...styles.taskContainer, flex:1 }}>
                     {skills.map((skill,index)=>{
@@ -78,23 +64,6 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         // alignItems:'center',
         justifyContent:'center'
-    },
-    taskTitle: {
-      alignItems: 'center',
-    },
-    tagsContainer: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
-    tags: {
-        //flex: 1,
-        backgroundColor: '#e9ecef',
-        // margin: 3,
-        // paddingRight:5,
-        // paddingLeft:5,
-        // paddingBottom:3,
-        borderRadius: 5,
-        fontSize: 10,
     },
     skillsButton: {
         color: '#5755d5',

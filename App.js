@@ -2,7 +2,8 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import Journey from './components/journey'
 import Personal from './components/personal'
-import Task from './components/task'
+import SkillsProgress from './components/skillsProgress'
+import TaskHeader from './components/taskHeader'
 import Quickies from './components/quickies'
 import { journeys_data } from './data/journeys_data'
 import ViewPager from '@react-native-community/viewpager'
@@ -22,7 +23,8 @@ export default class App extends React.Component {
               <View key={index}  style={styles.container}>
                 <Personal />
                 <Journey journey={journey} />
-                <Task journey={journey}/>
+                <TaskHeader journey={journey} />
+                <SkillsProgress journey={journey} />
                 <Quickies />
               </View> )
             })
