@@ -22,7 +22,7 @@ export default class Task extends React.Component {
 
         //const tags = ['journey tag1', 'journey tag2', 'journey tag3']
         const {data} = this.props
-        const firstData = data[0]
+        const firstData = data
         const {
           title,
           journeyId,

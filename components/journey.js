@@ -6,7 +6,7 @@ export default class Journey extends React.Component {
 
     render() {
       const {data} = this.props
-      const firstData = data[0]
+      const firstData = data
       const {
         title,
         journeyId,
