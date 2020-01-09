@@ -45,6 +45,8 @@ const styles = StyleSheet.create({
         borderColor: '#ff9500',
         position: 'absolute',                          
         top: -15,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     quickiesText: {
         margin: 15,

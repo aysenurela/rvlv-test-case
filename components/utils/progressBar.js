@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Animated } from 'react-native';
+import { Text, View, StyleSheet, Animated, TextInput } from 'react-native';
 
 export default class ProgressBar extends React.Component {
     constructor(props) {
@@ -58,7 +58,7 @@ export default class ProgressBar extends React.Component {
                     <View style={styles.percentageValue} >
                         <Text style={{fontWeight:'bold', color:`#${skillHexColor}`}}>{percent}</Text>
                     </View> 
-                    <Text style={styles.skillTitle}> {title} </Text>
+                    <TextInput style={styles.skillTitle}> {title} </TextInput>
                 </View>
                 <View style={styles.barView}>  
                     <View 
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     percentageValue: {
+        height: 12,
         zIndex: 1, 
         position: 'absolute',
         backgroundColor: 'white', 
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
         bottom: 0,
         borderRadius: 20,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     skillTitle: {
         zIndex:1, 

@@ -64,29 +64,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginRight: 25,
     marginLeft: 25,
-    // marginTop:25,
-    // padding:15
+    marginTop:10,
+    padding:10
   },
   journeyProgression: {
     flexDirection: 'row',
-    //alignItems: 'center',
     justifyContent:'center',
   },
   journeyTitle: {
     alignItems: 'center',
     marginTop:30,
-    // justifyContent: 'center',
-    // alignContent: 'center'
+    justifyContent:'center'
   },
   progressBarContainer: {
     position: 'absolute',
     bottom:-20,
-    //left:0,
     backgroundColor:'white',
     borderColor:'white', 
     borderWidth:7,
     borderRadius:45,
-    //shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 4
@@ -104,8 +100,7 @@ const styles = StyleSheet.create({
     borderRadius:40,
     width: '100%',
     height: '100%',
-    //shadowOffset: { width: 0, height:  },
-    shadowOpacity: 0.8,
+    shadowOpacity: 0.5,
     shadowRadius: 2,
     elevation: 3
   }

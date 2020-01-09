@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,9 +8,11 @@ export default class Personal extends React.Component {
         return (
         <View style={styles.personContainer}>
             <View style={{flex:1}}>
-                <View>
-                    <FontAwesomeIcon icon={ faBars } color={'white'}/>
-                </View>
+                <TouchableOpacity>
+                    <View>
+                        <FontAwesomeIcon icon={ faBars } color={'white'}/>
+                    </View>
+                </TouchableOpacity>
                 <Text style={styles.myStatus}> My Status </Text>
             </View>
             <View>
@@ -25,19 +27,18 @@ export default class Personal extends React.Component {
   
 const styles = StyleSheet.create({
     personContainer: {
-        //display:"flex",
         flexDirection: "row",
         marginRight: 25,
         marginLeft: 25,
         marginTop:25,
-        marginBottom:0,
+        marginBottom:15
     },
     myButton: {
         width: 25,
         height: 25,
     },
     myStatus: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
         color:'white'
     },

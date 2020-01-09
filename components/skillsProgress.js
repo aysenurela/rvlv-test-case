@@ -15,9 +15,9 @@ export default class SkillsProgress extends React.Component {
         <View>
             <View style={styles.progressContainer}>
                 <View style={{...styles.taskContainer, flex:1 }}>
-                    {skills.map((skill)=>{
+                    {skills.map((skill, index)=>{
                         return (
-                            <View>
+                            <View key={index}>
                                 <ProgressBar
                                     duration = {500}
                                     skill = {skill}/>
@@ -42,16 +42,15 @@ const styles = StyleSheet.create({
     taskContainer: {
       backgroundColor: 'white',
       borderRadius:15,
-      borderColor: '#ff9500',
+      borderColor: '#5755d5',
       borderWidth: 1,
       marginRight: 25,
       marginLeft: 25,
-      // marginTop:15,
-      // padding:15
+      marginTop:10,
+      padding:5
     },
     progressContainer: {
         flexDirection:'row',
-        // alignItems:'center',
         justifyContent:'center'
     },
     skillsButton: {
@@ -65,5 +64,7 @@ const styles = StyleSheet.create({
         borderWidth: 4,
         position:'absolute',                          
         bottom: -15,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });

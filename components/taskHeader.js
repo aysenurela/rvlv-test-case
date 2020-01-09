@@ -16,7 +16,7 @@ export default class TaskHeader extends React.Component {
             <View style={styles.taskContainer}>
                 <View style={styles.taskTitle}>
                     <Text style={{ color: '#5755d5'}}> Today's Task: </Text>
-                    <Text style={{ fontSize:30, fontWeight:'bold', color: '#5755d5'}}> {taskTitle} </Text>
+                    <Text style={{ fontSize:20, fontWeight:'bold', color: '#5755d5'}}> {taskTitle} </Text>
                 </View>
                 <View style={styles.tagsContainer}>
                     {tags.map((tag, index)=>{
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       marginRight: 25,
       marginLeft: 25,
-      // marginTop:15,
-      // padding:15
+      marginTop:10,
+      padding:10
     },
     taskTitle: {
       alignItems: 'center',
@@ -48,13 +48,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     tags: {
-        //flex: 1,
         backgroundColor: '#e9ecef',
-        // margin: 3,
-        // paddingRight:5,
-        // paddingLeft:5,
-        // paddingBottom:3,
-        borderRadius: 5,
+        margin: 3,
         fontSize: 10,
     }
 });
