@@ -1,7 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
-
-
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 export default class Quickies extends React.Component {
     render() {
         return (
@@ -21,35 +19,32 @@ export default class Quickies extends React.Component {
 
 const styles = StyleSheet.create({
     quickies: {
-        flex:1,
+        flex: 1,
         backgroundColor: '#ff9500',
-        alignItems:'center',
-        position:'absolute',
-        bottom: -50,
-        height: 100,
-        alignSelf:'center',
-        width:'100%',
-        borderRadius:50
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        borderTopRightRadius: 50,
+        borderTopLeftRadius: 50
     },
     quickiesButton: {
-        zIndex:1,
+        zIndex: 1,
         width: 30,
         height: 30,
         borderWidth: 4, 
-        borderRadius:15,
+        borderRadius: 15,
         color: '#ff9500',
         backgroundColor: 'white',
         borderColor: '#ff9500',
-        position:'absolute',                          
+        position: 'absolute',                          
         top: -15,
-        justifyContent:'center',
-        alignItems:'center',
     },
     quickiesText: {
-        margin: 25,
+        margin: 15,
         fontWeight:'bold',
-        fontSize: 15,
         color: 'white'
     }
-  });
+});
   
