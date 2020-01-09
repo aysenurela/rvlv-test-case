@@ -2,15 +2,34 @@ import React from 'react';
 import { Text, View, StyleSheet, Animated } from 'react-native';
 
 export default class ProgressBar extends React.Component {
-    
-    componentWillMount() {
-        this.animation = new Animated.Value(this.props.progress)
+    constructor(props) {
+        super(props)
+        this.state= {
+            progress: 0
+        }
+        this.animation = new Animated.Value(this.state.progress)
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.progress !== this.props.progress) {
+    componentDidMount() {
+        const {
+            skill: {
+                percent = ''
+            } = {}
+        } = this.props
+
+        this.setState({ progress: percent })
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        const {
+            skill: {
+                percent = ''
+            } = {}
+        } = this.props
+        
+        if (prevState.progress !== this.state.progress) {
             Animated.timing(this.animation, {
-                toValue: this.props.progress,
+                toValue: percent,
                 duration: this.props.duration
             }).start()
         }

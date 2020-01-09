@@ -3,20 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import ProgressBar from './utils/progressBar'
 
 export default class SkillsProgress extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            progress: 10
-        }
-    }
-
-    componentDidMount() {
-        const tagsPercentages = [20, 40, 70]
-        setInterval(() => {
-            this.setState(state => ({ progress: 70 }))
-        }, 1000)
-    }
-    
     render() {
         const { journey } = this.props
         const {
@@ -27,11 +13,10 @@ export default class SkillsProgress extends React.Component {
         <View>
             <View style={styles.progressContainer}>
                 <View style={{...styles.taskContainer, flex:1 }}>
-                    {skills.map((skill,index)=>{
+                    {skills.map((skill)=>{
                         return (
                             <View>
-                                <ProgressBar 
-                                    progress = {this.state.progress}
+                                <ProgressBar
                                     duration = {500}
                                     skill = {skill}/>
                             </View>

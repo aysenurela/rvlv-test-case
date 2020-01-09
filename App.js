@@ -13,12 +13,9 @@ export default class App extends React.Component {
       return (
         <ViewPager 
           style={styles.viewPager} 
-          initialPage={0}
-          onPageScroll={()=>{}}
-          onPageScrollStateChanged={()=>{}}
           orientation= 'horizontal'
           >
-          {journeys_data.map((journey,index)=>{
+          {journeys_data.map((journey,index) => {
             return (
               <View key={index}  style={styles.container}>
                 <Personal />
