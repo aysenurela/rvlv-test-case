@@ -1,9 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import ProgressBar from './progressBar'
-
 export default class Task extends React.Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -13,40 +11,35 @@ export default class Task extends React.Component {
 
     componentDidMount() {
         const tagsPercentages = [20, 40, 70]
-        setInterval( () => {
+        setInterval(() => {
             this.setState(state => ({ progress: 70 }))
         }, 1000)
     }
     
     render() {
-
-        //const tags = ['journey tag1', 'journey tag2', 'journey tag3']
-        const {data} = this.props
-        const firstData = data
+        const { journey } = this.props
         const {
-          title,
-          journeyId,
-          points,
-          percent,
-          rank,
           skills = [],
-          task : {title:taskTitle, tags}
-        } = firstData
+          task: {
+              title:taskTitle = '', 
+              tags = []
+            } = {}
+        } = { ...journey }
 
         return (
         <View>
-            <View className="todays_task" style={styles.taskContainer}>
+            <View style={styles.taskContainer}>
                 <View style={styles.taskTitle}>
-                    <Text style={{ color: '#5755d5'}}>Today's Task:</Text>
+                    <Text style={{ color: '#5755d5'}}> Today's Task: </Text>
                     <Text style={{ fontSize:30, fontWeight:'bold', color: '#5755d5'}}> {taskTitle} </Text>
                 </View>
                 <View style={styles.tagsContainer}>
                     {tags.map((tag, index)=>{
-                        return <Text key={index} style={styles.tags}>{tag}</Text>
+                        return <Text key={index} style={styles.tags}> {tag} </Text>
                     })}
                 </View>
             </View>
-            <View className="progressContainer" style={styles.progressContainer}>
+            <View style={styles.progressContainer}>
                 <View style={{...styles.taskContainer, flex:1 }}>
                     {skills.map((skill,index)=>{
                         return (
@@ -54,8 +47,7 @@ export default class Task extends React.Component {
                                 <ProgressBar 
                                     progress = {this.state.progress}
                                     duration = {500}
-                                    skill = {skill}
-                                />
+                                    skill = {skill}/>
                             </View>
                         )
                     })}
@@ -73,38 +65,34 @@ export default class Task extends React.Component {
   
 const styles = StyleSheet.create({
     taskContainer: {
-      //flexDirection: 'column',
       backgroundColor: 'white',
       borderRadius:15,
       borderColor: '#ff9500',
       borderWidth: 1,
       marginRight: 25,
       marginLeft: 25,
-      marginTop:15,
-      marginBottom:0,
-      padding:15
+      // marginTop:15,
+      // padding:15
     },
     progressContainer: {
         flexDirection:'row',
-        alignItems:'center',
+        // alignItems:'center',
         justifyContent:'center'
     },
     taskTitle: {
       alignItems: 'center',
-      //padding:10,
     },
     tagsContainer: {
         flexDirection: 'row',
-        justifyContent: 'center'
-        //padding:10,,
+        justifyContent: 'center',
     },
     tags: {
         //flex: 1,
         backgroundColor: '#e9ecef',
-        margin: 3,
-        paddingRight:5,
-        paddingLeft:5,
-        paddingBottom:3,
+        // margin: 3,
+        // paddingRight:5,
+        // paddingLeft:5,
+        // paddingBottom:3,
         borderRadius: 5,
         fontSize: 10,
     },
@@ -118,11 +106,6 @@ const styles = StyleSheet.create({
         borderColor: '#5755d5',
         borderWidth: 4,
         position:'absolute',                          
-        //left: 0,
-        //top: 0,
         bottom: -15,
-        alignItems:'center',
-        justifyContent:'center',
-        //alignSelf: 'center'
     }
-  });
+});

@@ -1,8 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-
 export default class Personal extends React.Component {
-    
     render() {
         return (
         <View style={styles.personContainer}>
@@ -30,7 +28,6 @@ const styles = StyleSheet.create({
         marginLeft: 25,
         marginTop:25,
         marginBottom:0,
-        padding:5
     },
     myButton: {
         width: 25,
@@ -45,7 +42,7 @@ const styles = StyleSheet.create({
         width:60, 
         height:60,
         borderColor:"white",
-        borderWidth: 2,
+        borderWidth: 1,
         backgroundColor: 'white',
         borderRadius:30,
     }
