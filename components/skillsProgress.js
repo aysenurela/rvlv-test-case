@@ -1,6 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import ProgressBar from './utils/progressBar'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 export default class SkillsProgress extends React.Component {
     render() {
@@ -25,7 +27,9 @@ export default class SkillsProgress extends React.Component {
                 </View>
                 <View style={styles.skillsButton}>  
                     <TouchableOpacity>
-                        <Text>...</Text>
+                    <View>
+                        <FontAwesomeIcon icon={ faEllipsisH } color={'#5856d6'}/>
+                    </View>
                     </TouchableOpacity> 
                 </View>
             </View>

@@ -1,6 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
+
 export default class Journey extends React.Component {
   render() {
     const { journey } = this.props
@@ -15,6 +18,9 @@ export default class Journey extends React.Component {
     return (
       <View style={styles.journeyContainer}>
         <View style={styles.journeyProgression}>
+          <View>
+            <FontAwesomeIcon icon={ faStar } color={'#fbc800'}/>
+          </View>
           <View style={{flex:1}}><Text> {points} </Text></View>
           <View style={styles.progressBarContainer}>
               <AnimatedCircularProgress
@@ -36,6 +42,9 @@ export default class Journey extends React.Component {
                 )}
               </AnimatedCircularProgress>
             </View>
+          <View>
+            <FontAwesomeIcon icon={ faBookmark } color={'#fbc800'}/>
+          </View>
           <View><Text> {rank} </Text></View>
         </View>
         <View style={styles.journeyTitle}>

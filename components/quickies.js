@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+
 export default class Quickies extends React.Component {
     render() {
         return (
             <View style={styles.quickies}>
                 <View style={styles.quickiesButton}>    
                     <TouchableOpacity>
-                            <Text>...</Text>
+                        <View>
+                            <FontAwesomeIcon icon={faArrowUp} color={'#ff9500'}/>
+                        </View>
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.quickiesText}>

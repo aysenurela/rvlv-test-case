@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
 export default class Personal extends React.Component {
     render() {
         return (
         <View style={styles.personContainer}>
             <View style={{flex:1}}>
-                <Image  
-                    style={styles.myButton}
-                    source={{uri:'https://webstockreview.net/images/menu-icon-png-4.png'}} />
+                <View>
+                    <FontAwesomeIcon icon={ faBars } color={'white'}/>
+                </View>
                 <Text style={styles.myStatus}> My Status </Text>
             </View>
             <View>
