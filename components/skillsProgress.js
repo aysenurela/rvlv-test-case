@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     skillsButton: {
         color: '#5755d5',
         zIndex:1,
-        width: 30,
-        height: 30,
+        width: 26,
+        height: 26,
         backgroundColor: 'white',
         borderRadius:15,
         borderColor: '#5755d5',

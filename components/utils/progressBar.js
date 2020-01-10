@@ -54,7 +54,7 @@ export default class ProgressBar extends React.Component {
 
         return(
             <View style={styles.containerView }>
-                <View style={{justifyContent:'center'}}>
+                <View style={{justifyContent:'center', zIndex:1}}>
                     <View style={styles.percentageValue} >
                         <Text style={{fontWeight:'bold', color:`#${skillHexColor}`}}>{percent}</Text>
                     </View> 
@@ -82,26 +82,24 @@ export default class ProgressBar extends React.Component {
 const styles = StyleSheet.create({
     containerView: {
         flexDirection: 'row', 
-        height: 35, 
-        margin: 5, 
+        height: 30, 
+        margin: 7, 
         borderRadius: 20
     },
     percentageValue: {
         height: 12,
-        zIndex: 1, 
         position: 'absolute',
         backgroundColor: 'white', 
-        width: 27,  
-        height: 27,                            
-        left: 4,
-        top: 4,
+        width: 24,  
+        height: 24,                            
+        left: 3,
+        top: 3,
         bottom: 0,
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
     },
     skillTitle: {
-        zIndex:1, 
         position: 'absolute', 
         left:35, 
         color: 'white'
