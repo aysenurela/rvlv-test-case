@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     },
     quickiesButton: {
         zIndex: 1,
-        width: 30,
-        height: 30,
+        width: 26,
+        height: 26,
         borderWidth: 4, 
         borderRadius: 15,
         color: '#ff9500',
